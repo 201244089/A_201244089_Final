@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         S_start = (Switch)findViewById(R.id.s_start);
-        chronometer = (Chronometer)findViewById(R.id.chronometer2);
+        chronometer = (Chronometer)findViewById(R.id.c_meter);
         et_adult = (EditText)findViewById(R.id.txtE_adult);
         et_youth = (EditText)findViewById(R.id.txtE_youth);
         et_child = (EditText)findViewById(R.id.txtE_child);
@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                     mainlayout.setVisibility(View.VISIBLE);
                 }
                 if(isChecked == false){
+                    mainlayout.setVisibility(View.INVISIBLE);
+                    chronometer.stop();
                     et_adult.setText("");
                     et_child.setText("");
                     et_youth.setText("");
