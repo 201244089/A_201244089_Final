@@ -1,5 +1,6 @@
 package sampleandroid.a_201244089_final;
 
+import android.graphics.Color;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -69,10 +70,26 @@ public class MainActivity extends AppCompatActivity {
                 if(isChecked){
                     chronometer.setBase(SystemClock.elapsedRealtime());
                     chronometer.start();
+                    chronometer.setTextColor(Color.BLUE);
                     mainlayout.setVisibility(View.VISIBLE);
                 }
             }
         });
+        dcgroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(r_normaldc.isChecked()){
+                    imageView.setImageResource(R.drawable.normal);
+                }
+                if(r_cashdc.isChecked()){
+                    imageView.setImageResource(R.drawable.cash);
+                }
+                if(r_memberdc.isChecked()){
+                    imageView.setImageResource(R.drawable.member);
+                }
+            }
+        });
+
     }
 
 }
