@@ -24,13 +24,13 @@
             android:text="Book Start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/switch"
+            android:id="@+id/s_start"
             android:layout_weight="0.12" />
 
         <Chronometer
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:id="@+id/chronometer"
+            android:id="@+id/c_meter"
             android:layout_weight="0.72"
             android:textAlignment="center" />
 
@@ -89,13 +89,13 @@
                 <TimePicker
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/timePicker"
+                    android:id="@+id/t_picker"
                     android:visibility="invisible" />
 
                 <CalendarView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/calendarView"
+                    android:id="@+id/c_view"
                     android:visibility="invisible" />
             </FrameLayout>
 
@@ -242,7 +242,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:srcCompat="@mipmap/ic_launcher"
-                    android:id="@+id/imageView1"
+                    android:id="@+id/i_view"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -263,7 +263,7 @@
                     android:text="Time Book"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/b_time"
+                    android:id="@+id/b_gotime"
                     android:layout_weight="1" />
             </LinearLayout>
 

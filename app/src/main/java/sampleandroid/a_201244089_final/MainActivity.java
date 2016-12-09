@@ -1,17 +1,24 @@
 package sampleandroid.a_201244089_final;
 
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Chronometer;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import java.sql.Time;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,10 +32,47 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     TimePicker timePicker;
     CalendarView calendarView;
+    LinearLayout timelayout,mainlayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        S_start = (Switch)findViewById(R.id.s_start);
+        chronometer = (Chronometer)findViewById(R.id.chronometer2);
+        et_adult = (EditText)findViewById(R.id.txtE_adult);
+        et_youth = (EditText)findViewById(R.id.txtE_youth);
+        et_child = (EditText)findViewById(R.id.txtE_child);
+        dcgroup = (RadioGroup)findViewById(R.id.Dcgroup);
+        r_normaldc = (RadioButton)findViewById(R.id.r_Ndc);
+        r_cashdc = (RadioButton)findViewById(R.id.r_Cdc);
+        r_memberdc = (RadioButton)findViewById(R.id.r_Mdc);
+        r_date = (RadioButton)findViewById(R.id.r_date);
+        r_time = (RadioButton)findViewById(R.id.r_time);
+        b_Pdone = (Button)findViewById(R.id.B_persondone);
+        b_gotime =(Button)findViewById(R.id.b_gotime);
+        b_back = (Button)findViewById(R.id.b_back);
+        b_tdone = (Button)findViewById(R.id.b_timedone);
+        tv_total = (TextView)findViewById(R.id.txtV_total);
+        tv_cost = (TextView)findViewById(R.id.txtV_cost);
+        tv_dc = (TextView)findViewById(R.id.txtV_dc);
+        imageView = (ImageView)findViewById(R.id.i_view);
+        timePicker = (TimePicker)findViewById(R.id.t_picker);
+        calendarView = (CalendarView)findViewById(R.id.c_view);
+        mainlayout = (LinearLayout)findViewById(R.id.mainLayout);
+        timelayout = (LinearLayout)findViewById(R.id.timeLayout);
+
+        S_start.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    chronometer.setBase(SystemClock.elapsedRealtime());
+                    chronometer.start();
+                    mainlayout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
+
 }
