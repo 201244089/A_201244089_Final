@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="sampleandroid.a_201244089_final.MainActivity"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.00">
+
+        <TextView
+            android:text="book start"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:id="@+id/txtV_start"
+            android:layout_weight="0.17"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+        <Chronometer
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:id="@+id/chronometer2"
+            android:layout_weight="0.72"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="1.11"
+        android:id="@+id/mainLayout"
+        android:visibility="invisible">
+
+        <TextView
+            android:text="Person book"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:id="@+id/txtV_person"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:text="Adult(15000)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtV_adult"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="0"
+                android:ems="10"
+                android:id="@+id/txtE_adult"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:text="Youth(12000)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtV_youth"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="0"
+                android:ems="10"
+                android:id="@+id/txtE_youth"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <TextView
+                android:text="child(8000)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtV_child"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="0"
+                android:ems="10"
+                android:id="@+id/txtE_child"
+                android:layout_weight="0.74"
+                android:textAlignment="viewEnd" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <RadioGroup
+                android:layout_width="180dp"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:text="Normal DC(5%)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/r_Ndc" />
+
+                <RadioButton
+                    android:text="Cash DC(10%)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/r_Cdc" />
+
+                <RadioButton
+                    android:text="MemberShip DC(20%)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/r_Mdc" />
+
+            </RadioGroup>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@mipmap/ic_launcher"
+                android:id="@+id/imageView1"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <Button
+                android:text="Book Done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/B_done"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="Time Book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/b_time"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <TextView
+                android:text="total : "
+                android:layout_width="match_parent"
+                android:id="@+id/txtV_total"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:text="DC : "
+                android:layout_width="match_parent"
+                android:id="@+id/textView10"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:text="Cost : "
+                android:layout_width="match_parent"
+                android:id="@+id/textView9"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
