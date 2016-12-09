@@ -18,6 +18,8 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
 import java.util.*;
 import java.io.*;
 
@@ -100,23 +102,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 double a,y,c,cost,dc,result;
-                a = Double.parseDouble(et_adult.getText().toString());
-                y = Double.parseDouble(et_youth.getText().toString());
-                c = Double.parseDouble(et_child.getText().toString());
-                cost = (a*15000)+(y*12000)+(c*8000);
-                dc = cost*(1/20);
-                if(dcCheck == 1){
-                    dc = cost*(1/10);
+                if(et_adult.getText() == null || et_youth.getText() == null || et_child.getText() == null){
+                    Toast.makeText(getApplicationContext(),"인원을 입력하세요.",Toast.LENGTH_SHORT).show();
                 }
-                if(dcCheck == 2){
-                    dc = cost*(1/5);
+                else {
+                    a = Double.parseDouble(et_adult.getText().toString());
+                    y = Double.parseDouble(et_youth.getText().toString());
+                    c = Double.parseDouble(et_child.getText().toString());
+                    cost = (a * 15000) + (y * 12000) + (c * 8000);
+                    dc = cost * (1 / 20);
+                    if (dcCheck == 1) {
+                        dc = cost * (1 / 10);
+                    }
+                    if (dcCheck == 2) {
+                        dc = cost * (1 / 5);
+                    }
+                    result = cost - dc;
+                    tv_total.setText("Total : " + a + y + c);
+                    tv_dc.setText("DC : " + dc);
+                    tv_cost.setText("Cost : " + result);
                 }
-                result = cost -  dc;
-                tv_total.setText("Total : "+a+y+c);
-                tv_dc.setText("DC : "+dc);
-                tv_cost.setText("Cost : "+result);
             }
         });
+
 
     }
 
