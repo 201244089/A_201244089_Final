@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     CalendarView calendarView;
     LinearLayout timelayout,mainlayout;
     int dcCheck = 0;
+    int year,month,day,hour,min;
     boolean personCheck = false;
 
     @Override
@@ -145,6 +146,22 @@ public class MainActivity extends AppCompatActivity {
                     calendarView.setVisibility(View.INVISIBLE);
                     timePicker.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year1, int month1, int dayOfMonth1) {
+                year = year1;
+                month = month1;
+                day = dayOfMonth1;
+            }
+        });
+
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                hour = hourOfDay;
+                min = minute;
             }
         });
 
