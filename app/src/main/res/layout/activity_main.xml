@@ -20,20 +20,17 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.00">
 
-        <TextView
-            android:text="book start"
+        <Switch
+            android:text="Book Start"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:id="@+id/txtV_start"
-            android:layout_weight="0.17"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="normal|bold" />
+            android:layout_height="wrap_content"
+            android:id="@+id/switch"
+            android:layout_weight="0.12" />
 
         <Chronometer
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:id="@+id/chronometer2"
+            android:id="@+id/chronometer"
             android:layout_weight="0.72"
             android:textAlignment="center" />
 
@@ -53,7 +50,7 @@
             android:visibility="invisible">
 
             <TextView
-                android:text="TextView"
+                android:text="Time Book"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtV_time"
@@ -218,7 +215,8 @@
 
                 <RadioGroup
                     android:layout_width="180dp"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent"
+                    android:id="@+id/Dcgroup">
 
                     <RadioButton
                         android:text="Normal DC(5%)"
@@ -258,7 +256,7 @@
                     android:text="Book Done"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/B_done"
+                    android:id="@+id/B_persondone"
                     android:layout_weight="1" />
 
                 <Button
@@ -283,13 +281,13 @@
                 <TextView
                     android:text="DC : "
                     android:layout_width="match_parent"
-                    android:id="@+id/textView10"
+                    android:id="@+id/txtV_dc"
                     android:layout_height="30dp" />
 
                 <TextView
                     android:text="Cost : "
                     android:layout_width="match_parent"
-                    android:id="@+id/textView9"
+                    android:id="@+id/txtV_cost"
                     android:layout_height="30dp" />
             </LinearLayout>
 
