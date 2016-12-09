@@ -47,7 +47,7 @@
             android:layout_height="573dp"
             android:id="@+id/timeLayout"
             android:weightSum="1"
-            android:visibility="visible">
+            android:visibility="invisible">
 
             <TextView
                 android:text="Time Book"

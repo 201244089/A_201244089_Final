@@ -81,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
                     chronometer.setTextColor(Color.BLUE);
                     mainlayout.setVisibility(View.VISIBLE);
                 }
+                if(isChecked == false){
+                    et_adult.setText("");
+                    et_child.setText("");
+                    et_youth.setText("");
+                    tv_total.setText("Total : ");
+                    tv_cost.setText("Cost : ");
+                    tv_dc.setText("DC : ");
+
+                }
             }
         });
         dcgroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -162,6 +171,25 @@ public class MainActivity extends AppCompatActivity {
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
                 hour = hourOfDay;
                 min = minute;
+            }
+        });
+        b_tdone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(personCheck == false){
+                    Toast.makeText(getApplicationContext(),"인원예약을 먼저 하세요.",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),""+year+"년"+month+"월"+day+"일"+hour+"시"+min+"분 예약이 " +
+                            "완료 되었습니다.",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        b_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timelayout.setVisibility(View.INVISIBLE);
+                mainlayout.setVisibility(View.VISIBLE);
             }
         });
 
