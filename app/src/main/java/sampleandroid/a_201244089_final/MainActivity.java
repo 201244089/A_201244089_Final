@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Switch S_start;
     Chronometer chronometer;
     EditText et_adult,et_youth,et_child;
-    RadioGroup dcgroup;
+    RadioGroup dcgroup, timegroup;
     RadioButton r_normaldc, r_cashdc, r_memberdc,r_date,r_time;
     Button b_Pdone, b_gotime, b_tdone, b_back;
     TextView tv_total,tv_dc,tv_cost;
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     CalendarView calendarView;
     LinearLayout timelayout,mainlayout;
     int dcCheck = 0;
+    boolean personCheck = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         et_youth = (EditText)findViewById(R.id.txtE_youth);
         et_child = (EditText)findViewById(R.id.txtE_child);
         dcgroup = (RadioGroup)findViewById(R.id.Dcgroup);
+        timegroup = (RadioGroup)findViewById(R.id.timegroup);
         r_normaldc = (RadioButton)findViewById(R.id.r_Ndc);
         r_cashdc = (RadioButton)findViewById(R.id.r_Cdc);
         r_memberdc = (RadioButton)findViewById(R.id.r_Mdc);
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"인원을 입력하세요.",Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    personCheck = true;
                     a = Double.parseDouble(et_adult.getText().toString());
                     y = Double.parseDouble(et_youth.getText().toString());
                     c = Double.parseDouble(et_child.getText().toString());
@@ -124,7 +127,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        b_gotime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainlayout.setVisibility(View.INVISIBLE);
+                timelayout.setVisibility(View.VISIBLE);
+            }
+        });
+        timegroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(r_date.isChecked()){
+                    calendarView.setVisibility(View.VISIBLE);
+                    timePicker.setVisibility(View.INVISIBLE);
+                }
+                if(r_time.isChecked()){
+                    calendarView.setVisibility(View.INVISIBLE);
+                    timePicker.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
     }
 

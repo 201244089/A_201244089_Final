@@ -47,7 +47,7 @@
             android:layout_height="573dp"
             android:id="@+id/timeLayout"
             android:weightSum="1"
-            android:visibility="invisible">
+            android:visibility="visible">
 
             <TextView
                 android:text="Time Book"
@@ -60,24 +60,34 @@
                 android:textSize="20sp" />
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_weight="0.04"
                 android:layout_height="25dp">
 
-                <RadioButton
-                    android:text="Set Date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/r_date"
-                    android:layout_weight="1" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:id="@+id/timegroup">
 
-                <RadioButton
-                    android:text="Set Time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/r_time"
-                    android:layout_weight="1" />
+                    <RadioButton
+                        android:text="Set Date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/r_date"
+                        android:layout_weight="1"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:text="Set Time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/r_time"
+                        android:layout_weight="1" />
+
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -96,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/c_view"
-                    android:visibility="invisible" />
+                    android:visibility="visible" />
             </FrameLayout>
 
             <LinearLayout
