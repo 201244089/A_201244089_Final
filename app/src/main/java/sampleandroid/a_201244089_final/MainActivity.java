@@ -18,6 +18,8 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import java.util.*;
+import java.io.*;
 
 import java.sql.Time;
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     TimePicker timePicker;
     CalendarView calendarView;
     LinearLayout timelayout,mainlayout;
+    int dcCheck = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,13 +83,38 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(r_normaldc.isChecked()){
                     imageView.setImageResource(R.drawable.normal);
+                    dcCheck = 0;
                 }
                 if(r_cashdc.isChecked()){
                     imageView.setImageResource(R.drawable.cash);
+                    dcCheck = 1;
                 }
                 if(r_memberdc.isChecked()){
                     imageView.setImageResource(R.drawable.member);
+                    dcCheck = 2;
                 }
+            }
+        });
+
+        b_Pdone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double a,y,c,cost,dc,result;
+                a = Double.parseDouble(et_adult.getText().toString());
+                y = Double.parseDouble(et_youth.getText().toString());
+                c = Double.parseDouble(et_child.getText().toString());
+                cost = (a*15000)+(y*12000)+(c*8000);
+                dc = cost*(1/20);
+                if(dcCheck == 1){
+                    dc = cost*(1/10);
+                }
+                if(dcCheck == 2){
+                    dc = cost*(1/5);
+                }
+                result = cost -  dc;
+                tv_total.setText("Total : "+a+y+c);
+                tv_dc.setText("DC : "+dc);
+                tv_cost.setText("Cost : "+result);
             }
         });
 
