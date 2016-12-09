@@ -36,177 +36,264 @@
             android:id="@+id/chronometer2"
             android:layout_weight="0.72"
             android:textAlignment="center" />
+
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:layout_weight="1.11"
-        android:id="@+id/mainLayout"
-        android:visibility="invisible">
-
-        <TextView
-            android:text="Person book"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:id="@+id/txtV_person"
-            android:textAlignment="center"
-            android:textStyle="normal|bold"
-            android:textSize="20sp" />
+        android:layout_height="match_parent"
+        android:layout_weight="0.00">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="45dp">
+            android:layout_height="573dp"
+            android:id="@+id/timeLayout"
+            android:weightSum="1"
+            android:visibility="invisible">
 
             <TextView
-                android:text="Adult(15000)"
-                android:layout_width="wrap_content"
+                android:text="TextView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtV_adult"
-                android:layout_weight="1" />
+                android:id="@+id/txtV_time"
+                android:layout_weight="0.04"
+                android:textAlignment="center"
+                android:textStyle="normal|bold"
+                android:textSize="20sp" />
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="0"
-                android:ems="10"
-                android:id="@+id/txtE_adult"
-                android:layout_weight="1"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="45dp">
-
-            <TextView
-                android:text="Youth(12000)"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtV_youth"
-                android:layout_weight="1" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="0"
-                android:ems="10"
-                android:id="@+id/txtE_youth"
-                android:layout_weight="1"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="45dp">
-
-            <TextView
-                android:text="child(8000)"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/txtV_child"
-                android:layout_weight="1" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="0"
-                android:ems="10"
-                android:id="@+id/txtE_child"
-                android:layout_weight="0.74"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <RadioGroup
-                android:layout_width="180dp"
-                android:layout_height="match_parent" >
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_weight="0.04"
+                android:layout_height="25dp">
 
                 <RadioButton
-                    android:text="Normal DC(5%)"
-                    android:layout_width="match_parent"
+                    android:text="Set Date"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/r_Ndc" />
+                    android:id="@+id/r_date"
+                    android:layout_weight="1" />
 
                 <RadioButton
-                    android:text="Cash DC(10%)"
+                    android:text="Set Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/r_time"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_weight="0.52"
+                android:layout_height="250dp">
+
+                <TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timePicker"
+                    android:visibility="invisible" />
+
+                <CalendarView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/r_Cdc" />
+                    android:id="@+id/calendarView"
+                    android:visibility="invisible" />
+            </FrameLayout>
 
-                <RadioButton
-                    android:text="MemberShip DC(20%)"
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="0.04">
+
+                <Button
+                    android:text="Done"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/r_Mdc" />
+                    android:id="@+id/b_timedone"
+                    android:layout_weight="1" />
 
-            </RadioGroup>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/ic_launcher"
-                android:id="@+id/imageView1"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="45dp">
-
-            <Button
-                android:text="Book Done"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/B_done"
-                android:layout_weight="1" />
-
-            <Button
-                android:text="Time Book"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/b_time"
-                android:layout_weight="1" />
+                <Button
+                    android:text="Back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/b_back"
+                    android:layout_weight="1" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_weight="1.11"
+            android:id="@+id/mainLayout"
+            android:visibility="invisible">
 
             <TextView
-                android:text="total : "
+                android:text="Person book"
                 android:layout_width="match_parent"
-                android:id="@+id/txtV_total"
-                android:layout_height="30dp" />
+                android:layout_height="38dp"
+                android:id="@+id/txtV_person"
+                android:textAlignment="center"
+                android:textStyle="normal|bold"
+                android:textSize="20sp" />
 
-            <TextView
-                android:text="DC : "
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:id="@+id/textView10"
-                android:layout_height="30dp" />
+                android:layout_height="45dp">
 
-            <TextView
-                android:text="Cost : "
+                <TextView
+                    android:text="Adult(15000)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtV_adult"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="0"
+                    android:ems="10"
+                    android:id="@+id/txtE_adult"
+                    android:layout_weight="1"
+                    android:textAlignment="viewEnd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:id="@+id/textView9"
-                android:layout_height="30dp" />
+                android:layout_height="45dp">
+
+                <TextView
+                    android:text="Youth(12000)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtV_youth"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="0"
+                    android:ems="10"
+                    android:id="@+id/txtE_youth"
+                    android:layout_weight="1"
+                    android:textAlignment="viewEnd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:text="child(8000)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtV_child"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="0"
+                    android:ems="10"
+                    android:id="@+id/txtE_child"
+                    android:layout_weight="0.74"
+                    android:textAlignment="viewEnd" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <RadioGroup
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent" >
+
+                    <RadioButton
+                        android:text="Normal DC(5%)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/r_Ndc" />
+
+                    <RadioButton
+                        android:text="Cash DC(10%)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/r_Cdc" />
+
+                    <RadioButton
+                        android:text="MemberShip DC(20%)"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/r_Mdc" />
+
+                </RadioGroup>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/ic_launcher"
+                    android:id="@+id/imageView1"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <Button
+                    android:text="Book Done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/B_done"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:text="Time Book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/b_time"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <TextView
+                    android:text="total : "
+                    android:layout_width="match_parent"
+                    android:id="@+id/txtV_total"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:text="DC : "
+                    android:layout_width="match_parent"
+                    android:id="@+id/textView10"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:text="Cost : "
+                    android:layout_width="match_parent"
+                    android:id="@+id/textView9"
+                    android:layout_height="30dp" />
+            </LinearLayout>
+
         </LinearLayout>
-
-    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
